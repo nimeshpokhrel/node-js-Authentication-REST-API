@@ -21,6 +21,12 @@ const postSchema = new mongoose.Schema({
     max: 255,
     min: 6,
   },
+  userid: {
+    type: String,
+    required: true,
+    max: 64,
+    min: 12
+  }
 });
 
 module.exports = { postSchema: mongoose.model("posts", postSchema) };
