@@ -1,21 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const env = require("dotenv")
+const env = require("dotenv");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
-const postRoutes = require("./routes/posts")
+const postRoutes = require("./routes/posts");
 
 const app = express();
 const PORT = 3000;
 
-env.config()
+env.config();
 
-mongoose.connect(
-  process.env.DB_CONNECT,
-  () => {
-    console.log("connected to db");
-  }
-);
+mongoose.connect(process.env.DB_CONNECT, () => {
+  console.log("connected to db");
+});
 
 app.use(bodyParser.json());
 

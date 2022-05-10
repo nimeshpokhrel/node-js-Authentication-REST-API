@@ -25,8 +25,8 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
     max: 64,
-    min: 12
-  }
+    min: 12,
+  },
 });
 
 module.exports = { postSchema: mongoose.model("posts", postSchema) };

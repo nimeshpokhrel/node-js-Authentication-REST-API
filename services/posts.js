@@ -1,6 +1,9 @@
-const { postValidation } = require("../models/validation");
-const { postSchema } = require("../schema/postSchema");
-const { userSchema } = require("../schema/userSchema");
+const {
+  postValidation,
+  modifyPostValidation,
+} = require("../models/validationModel");
+const { postSchema } = require("../models/postModel");
+const { userSchema } = require("../models/userModel");
 
 const getPosts = async (request, response) => {
   try {
@@ -38,8 +41,8 @@ const addPost = async (request, response) => {
 
 const deletePost = async (request, response) => {
   //Validate the request data
-  if (!request.body._id || request.body._id.length < 12)
-    return response.status(400).send({ message: "Missing / Invalid Post ID" });
+  const validate = modifyPostValidation.validate(request.body);
+  if (validate.error) return response.status(400).send(validate.error);
 
   const checkID = await postSchema.findOne({
     _id: request.body._id,
@@ -56,7 +59,7 @@ const deletePost = async (request, response) => {
     await postSchema.deleteOne({
       _id: checkID._id,
     });
-    return response.send("success");
+    return response.status(200).send("success");
   }
 
   response

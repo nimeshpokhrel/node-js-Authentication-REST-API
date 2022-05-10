@@ -1,7 +1,10 @@
-const {userSchema} = require("../schema/userSchema");
+const { userSchema } = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { registrationValidation, loginValidation } = require("./validation");
+const {
+  registrationValidation,
+  loginValidation,
+} = require("../models/validationModel");
 
 const registerUser = async (request, response) => {
   //Validate the request data
@@ -52,8 +55,14 @@ const loginUser = async (request, response) => {
   //Login Condition
   if (checkEmail && checkPassword == true) {
     //Assign a token
-    const loginToken = jwt.sign({_id: checkEmail._id}, process.env.TOKEN_SECRET);
-    return response.status(200).header('auth-token', loginToken).send("login successful");
+    const loginToken = jwt.sign(
+      { _id: checkEmail._id },
+      process.env.TOKEN_SECRET
+    );
+    return response
+      .status(200)
+      .header("auth-token", loginToken)
+      .send("login successful");
   }
 
   if (checkEmail && checkPassword == !true)
