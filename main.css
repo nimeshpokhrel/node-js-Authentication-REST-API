@@ -1,0 +1,159 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.navbar {
+  border-top: 5px solid #ff4646;
+  display: flex;
+  padding: 0.8rem 0.8rem;
+  box-shadow: 0px 2px 20px rgb(1 41 112 / 10%);
+  position: relative;
+}
+
+.navbar-logo {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.nav-active {
+  color: #ff4646;
+  font-weight: 800;
+}
+
+a {
+  padding-top: 8px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #6c6c6c;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(./public/img/hero-bg.png) top center no-repeat;
+  background-size: cover;
+}
+
+.hero-img {
+  max-width: 750px;
+  height: auto;
+  float: right;
+  padding-top: 85px;
+  padding-right: 0px;
+}
+
+.hero-text {
+  float: left;
+  color: #293648;
+  padding-left: 50px;
+  padding-top: 200px;
+  margin-bottom: 0px;
+  font-size: 43px;
+  font-weight: 700;
+}
+
+.hero-subtext {
+  float: left;
+  color: #293648;
+  padding-left: 50px;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.hero-button {
+  float: left;
+  margin-left: 50px;
+  line-height: 0;
+  background-color: #ff4646;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 5px 30px rgba(241, 65, 65, 0.4);
+}
+
+.hero-button:hover {
+  background-color: rgb(255, 101, 101);
+}
+
+.hero-button-text {
+  color: white;
+  padding: 2px 18px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.about-section {
+  float: left;
+  border-radius: 4px;
+  padding: 20px 20px;
+  background-color: #f2f4fc;
+  margin-left: 75px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.about-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #ff4646;
+}
+
+.about-subheading {
+  font-size: 21px;
+  font-weight: 600;
+  color: #293648;
+}
+
+.about-description {
+  margin-bottom: 0px;
+}
+
+.about-button {
+  float: left;
+  line-height: 0;
+  background-color: #ff4646;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 5px 30px rgba(241, 65, 65, 0.4);
+}
+
+.about-button:hover {
+  background-color: rgb(255, 101, 101);
+}
+
+.about-button-text {
+  color: white;
+  padding: 2px 18px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.about-image {
+  max-width: 625px;
+  height: auto;
+  float: right;
+  padding-top: 75px;
+  padding-right: 100px;
+}

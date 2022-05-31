@@ -11,7 +11,7 @@ const loginValidation = joi.object({
   password: joi.string().min(8).max(1024).required(),
 });
 
-const postValidation = joi.object({
+const postValidation =   joi.object({
   title: joi.string().max(128).required(),
   description: joi.string().max(2048).required(),
 });

@@ -1,11 +1,14 @@
 const router = require("express").Router();
-const { privateRoutesAuth } = require("../auth/privateRoutesAuth");
+
+const { checkCookies } = require("../auth/privateRoutesAuth");
 const { getPosts, addPost, deletePost } = require("../services/posts");
 
-router.get("/", getPosts);
+router.get("/dashboard",checkCookies, (request, response) => {
+    response.render("dashboard")
+});
 
-router.post("/add", privateRoutesAuth, addPost);
+router.post("/add", checkCookies, addPost);
 
-router.delete("/delete", privateRoutesAuth, deletePost);
+router.delete("/delete", checkCookies, deletePost);
 
 module.exports = { routes: router };

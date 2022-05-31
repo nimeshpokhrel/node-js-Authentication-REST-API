@@ -1,0 +1,116 @@
+<%- include('./layouts/top') -%>
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="card px-5 py-5" id="form1">
+        <% if (message) { %>
+          <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg
+              class="bi flex-shrink-0 me-2"
+              width="24"
+              height="24"
+              role="img"
+              aria-label="Warning:"
+            >
+              <use xlink:href="#exclamation-triangle-fill" />
+            </svg>
+            <div><%= message %></div>
+          </div>
+          <% } %>
+        <h3 class="text-center"><%= title %></h3>
+        <h9 class="text-center"
+          ><a style="font-size: 0.9rem; text-decoration: none; color: #6c757d">
+            Existing User? Login to your account</a
+          >
+          <a href="/user/login" style="font-size: 0.9rem; text-decoration: none"
+            >here!</a
+          ></h9
+        >
+        <br />
+        <form
+          action="/user/register"
+          method="POST"
+          class="needs-validation"
+          novalidate
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div
+                  class="input-group-text"
+                  style="display: block; border-radius: 0rem"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+              <input
+                type="name"
+                class="form-control"
+                name="name"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div id="emailHelp" class="form-text">
+              We'll use you name for identifying you.
+            </div>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div
+                  class="input-group-text"
+                  style="display: block; border-radius: 0rem"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+              </div>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                aria-describedby="emailHelp"
+                required
+              />
+            </div>
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div
+                  class="input-group-text"
+                  style="display: block; border-radius: 0rem"
+                >
+                  <i class="fa-solid fa-key"></i>
+                </div>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                aria-describedby="passwordHelp"
+                required
+              />
+              <div class="invalid-feedback">Please enter the password.</div>
+            </div>
+            <div id="passwordHelp" class="form-text">
+              We suggest keeping a strong password.
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./layouts/bottom') -%>
